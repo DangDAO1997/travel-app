@@ -1,0 +1,13 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><title>Test</title><link rel="stylesheet" href="/styles/resets.css"><link rel="stylesheet" href="/styles/base.css"><link rel="stylesheet" href="/styles/header.css"><link rel="stylesheet" href="/styles/form.css"><link rel="stylesheet" href="/styles/footer.css"><script defer="defer" src="main.js"></script></head><body><header><div class="">Logo</div><div class="">navigation</div></header><main><section><form><input id="name" name="name" value="" onblur="onBlur()" required> <input type="submit" id="submit"></form><section><strong>Form Results:</strong><div id="results"></div></section></section></main><footer><p>This is a footer</p></footer></body><script>// Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performance
+        window.addEventListener('load', async () => {
+            const s = await navigator.serviceWorker.getRegistration('/service.js');
+            console.log(s);
+            if(!s){
+               await navigator.serviceWorker.register('/service.js')
+            };
+        });
+    } else {
+        console.log('service worker are not supported');
+    }</script></html>
