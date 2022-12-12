@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Travel</title>
-  <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
@@ -31,5 +30,18 @@
   <script src="main.js" type="text/javascript"></script>
 
 </body>
-
+<script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performance
+        window.addEventListener('load', async () => {
+            const s = await navigator.serviceWorker.getRegistration('/service.js');
+            if(!s){
+               await navigator.serviceWorker.register('/service.js')
+            };
+        });
+    } else {
+        console.log('service worker are not supported');
+    }
+</script>
 </html>

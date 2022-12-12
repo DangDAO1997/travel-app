@@ -1,1 +1,12 @@
-<!doctype html><html><head><meta charset="UTF-8"><title>Travel</title><link rel="stylesheet" href="/styles/style.css"><script defer="defer" src="main.js"></script></head><body><div id="app"><div class="holder headline">Travel App</div><div class="holder zip"><label for="zip">Enter City Name Here</label> <input id="zip" placeholder="New york"></div><div class="holder feel"><button id="generate">Search</button></div><div class="holder entry"><div class="title">TRAVEL</div><div id="entryHolder"><div id="date"></div><div id="temp"></div><div id="content"></div></div></div></div><script src="main.js"></script></body></html>
+<!doctype html><html><head><meta charset="UTF-8"><title>Travel</title><script defer="defer" src="main.js"></script></head><body><div id="app"><div class="holder headline">Travel App</div><div class="holder zip"><label for="zip">Enter City Name Here</label> <input id="zip" placeholder="New york"></div><div class="holder feel"><button id="generate">Search</button></div><div class="holder entry"><div class="title">TRAVEL</div><div id="entryHolder"><div id="date"></div><div id="temp"></div><div id="content"></div></div></div></div><script src="main.js"></script></body><script>// Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performance
+        window.addEventListener('load', async () => {
+            const s = await navigator.serviceWorker.getRegistration('/service.js');
+            if(!s){
+               await navigator.serviceWorker.register('/service.js')
+            };
+        });
+    } else {
+        console.log('service worker are not supported');
+    }</script></html>
