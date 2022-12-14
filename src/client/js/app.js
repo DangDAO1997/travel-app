@@ -11,6 +11,7 @@ const dateE = document.getElementById("date");
 const tempE = document.getElementById("temp");
 const contentE = document.getElementById("content");
 
+// get date and city then call api and show travel result
 const click = () => {
     const dateDes = Date.parse(timeE.value);
     const now = new Date().getTime();

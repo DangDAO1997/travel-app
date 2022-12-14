@@ -1,3 +1,5 @@
+
+// call api and handle data by callback function
 const getTravel = (city, callback) => {
     if(city&&typeof city === 'string'){
         fetch(`http://localhost:8080/travel?city=${city}`)

@@ -1,5 +1,5 @@
 body{
-    background: #fffff8;
+    background: #f23557;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -14,41 +14,35 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-.holder{
+.holder.zip{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
 
+.zip {
+    text-align: center;
+    padding: 8px 8px 0;
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
 }
 
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
 .headline {
-
+    text-align: center;
+    font-size: 50px;
 }
-.title{
 
+.title{
+    text-align: center;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
     display:block;
     font-size: 27px;
+    padding: inherit;
 }
 
 input{
@@ -63,15 +57,16 @@ input{
 }
 
 button{
-    width: 400px;
-    height: 100px;
     background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
     border: none;
+    border-radius: 15px;
     box-shadow: 2px 4px 5px #444;
+    color: #f0d43a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    width: 25%;
 }
+
 h1{
     font-size: 36px;
 }
@@ -107,3 +102,44 @@ button:focus {
     font-family: 'Oswald', sans-serif;
 
 } 
+
+.holder.feel {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .holder.zip{
+        display: block;
+        height: 60px;
+    }
+    
+    label{
+        display:flex;
+        font-size: 18px;
+        padding: inherit;
+    }
+
+    .title{
+        text-align: center;
+    }
+
+    .holder.feel {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+    }
+
+    button{
+        background: #3b4a6b;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 2px 4px 5px #444;
+        color: #f0d43a;
+        font-family: 'Oswald', sans-serif;
+        font-size: 26px;
+        width: 100px;
+    }
+}
